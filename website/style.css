@@ -43,15 +43,27 @@ header {
 .card {
   flex: 0 1 20%;
   background-color: white;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 cds-tile {
+  flex: 0 1 100%;
   display: flex;
   flex-flow: column;
   gap: 16px;
   background-color: white;
   padding-left: 0;
   padding-right: 0;
+}
+
+.install-instructions {
+  background-color: #0f62fe;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .tags {

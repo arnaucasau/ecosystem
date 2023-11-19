@@ -16,4 +16,37 @@
     </div>
     <div class="links">{{links}}</div>
   </cds-tile>
+
+  <div class="install-instructions" id="install-instructions-{{id_card}}"> Installation instructions</div>
+  <cds-modal id="modal-install-instructions-{{id_card}}">
+    <cds-modal-header>
+      <cds-modal-close-button></cds-modal-close-button>
+      <cds-modal-heading>Installation instructions</cds-modal-heading>
+    </cds-modal-header>
+    <cds-modal-body>
+      <p>1. Create a minimal environment with only Python installed in it.</p><br/>
+      <cds-code-snippet type="single" copy-text>
+        python3 -m venv /path/to/virtual/environment
+      </cds-code-snippet><br/>
+      <p>2. Activate your new environment.</p><br/>
+      <cds-code-snippet type="single" copy-text>
+        source /path/to/virtual/environment/bin/activate
+      </cds-code-snippet><br/>
+      <p>3. Install the following packages.</p><br/>
+      <cds-code-snippet type="single" copy-text>
+        pip install qiskit
+      </cds-code-snippet>
+      <cds-code-snippet type="single" copy-text>
+        pip install qiskit-ibm-runtime
+      </cds-code-snippet><br/>
+    </cds-modal-body>
+  </cds-modal>
+  <script type="text/javascript">
+    document
+      .getElementById('install-instructions-{{id_card}}')
+      .addEventListener('click', () => {
+        document.getElementById('modal-install-instructions-{{id_card}}').open = true;
+      });
+  </script>
+
 </div>

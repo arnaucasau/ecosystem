@@ -78,6 +78,7 @@ class Manager:
         max_chars_description_visible = 400
         min_chars_description_hidden = 100
         count_read_more = 1
+        id_card = 1
         for _, repo in projects_sorted:
             # Card tags
             tags = ""
@@ -112,7 +113,10 @@ class Manager:
                 description_hidden=description[1],
                 id_read_more=id_read_more,
                 links=links,
+                id_card=id_card,
             )
+
+            id_card += 1
 
             # Adding the card to a section
             sections[repo.group] += card
